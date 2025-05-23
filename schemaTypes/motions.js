@@ -41,7 +41,14 @@ export default {
             title: 'Order',
             type: 'number',
             description: 'Drag to reorder posters',
-            validation: Rule => Rule.required().integer().min(0)
+
+        },
+        {
+            name: 'ratio',
+            title: 'Ratio',
+            type: 'string',
+            description: 'Aspect ratio (e.g., 16:9, 4:3)',
+            validation: Rule => Rule.required()
         }
     ],
     orderings: [
@@ -49,7 +56,7 @@ export default {
             title: 'Order',
             name: 'orderAsc',
             by: [
-                {field: 'order', direction: 'asc'}
+                { field: 'order', direction: 'asc' }
             ]
         }
     ]

@@ -30,5 +30,11 @@ export default {
             type: 'number',
             description: 'Order of the poster in the list',
         },
+        {
+            name: 'ratio',
+            title: 'Ratio',
+            type: 'string',
+            description: 'Aspect ratio of the poster (e.g., 16/9, 4/3)',
+        },
     ],
 }

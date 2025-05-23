@@ -28,13 +28,20 @@ export default {
             name: 'altText',
             type: 'string',
             title: 'Alt Text',
-            description: 'Alternative text for the thumbnail image (optional)'
+            description: 'Alternative text for the thumbnail image '
         },
         {
             name: 'order',
             type: 'number',
             title: 'Order',
-            validation: Rule => Rule.required().integer().min(0)
+            validation: Rule => Rule.integer().min(0)
+        },
+        {
+            name: 'ratio',
+            title: 'Ratio',
+            type: 'string',
+            description: 'Aspect ratio (e.g., 16:9, 4:3)',
         }
+
     ]
 }
