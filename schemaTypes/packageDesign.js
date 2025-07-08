@@ -17,11 +17,19 @@ export default {
             type: 'string',
             description: 'Alternative text for the image'
         },
+       
         {
-            name: 'order',
-            title: 'Order',
-            type: 'number',
-            description: 'Display order'
-        }
-    ]
+            name: 'orderRank',
+            title: 'Order Rank',
+            type: 'string',
+            hidden: true, // This hides it from the regular document view
+        },
+    ],
+    orderings: [
+        {
+            title: 'Order by Rank',
+            name: 'orderRankAsc',
+            by: [{ field: 'orderRank', direction: 'asc' }],
+        },
+    ],
 }

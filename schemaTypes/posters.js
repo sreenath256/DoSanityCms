@@ -36,5 +36,18 @@ export default {
             type: 'string',
             description: 'Aspect ratio of the poster (e.g., 16/9, 4/3)',
         },
+        {
+            name: 'orderRank',
+            title: 'Order Rank',
+            type: 'string',
+            hidden: true, // This hides it from the regular document view
+        },
+    ],
+    orderings: [
+        {
+            title: 'Order by Rank',
+            name: 'orderRankAsc',
+            by: [{ field: 'orderRank', direction: 'asc' }],
+        },
     ],
 }

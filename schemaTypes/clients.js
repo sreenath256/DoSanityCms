@@ -1,6 +1,6 @@
 export default {
-    name: 'motion',
-    title: 'Motion',
+    name: 'client',
+    title: 'Client',
     type: 'document',
     fields: [
         {
@@ -21,34 +21,17 @@ export default {
                     name: 'alt',
                     title: 'Alt Text',
                     type: 'string',
-                    description: 'Alternative text for screen readers',
-                    validation: Rule => Rule.required()
+                    description: 'Alternative text for the image',
                 }
-            ],
-            validation: Rule => Rule.required()
-        },
-        {
-            name: 'video',
-            title: 'Video',
-            type: 'file',
-            options: {
-                accept: 'video/*'
-            },
-            description: 'Upload a video file for this poster'
-        },
-        {
-            name: 'ratio',
-            title: 'Ratio',
-            type: 'string',
-            description: 'Aspect ratio (e.g., 16/9, 4/3)',
-            validation: Rule => Rule.required()
+            ]
         },
         {
             name: 'orderRank',
             title: 'Order Rank',
             type: 'string',
-            hidden: true, // This hides it from the regular document view
+            hidden: true,
         },
+
     ],
     orderings: [
         {
@@ -57,5 +40,4 @@ export default {
             by: [{ field: 'orderRank', direction: 'asc' }],
         },
     ],
-
 }

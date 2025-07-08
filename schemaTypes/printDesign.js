@@ -31,9 +31,11 @@ export default {
             validation: Rule => Rule.required().min(1)
         },
         {
-            name: 'order',
-            title: 'Order',
-            type: 'number'
-        }
-    ]
+            name: 'orderRank',
+            title: 'Order Rank',
+            type: 'string',
+            hidden: true, // This hides it from the regular document view
+        },
+    ],
+   
 }

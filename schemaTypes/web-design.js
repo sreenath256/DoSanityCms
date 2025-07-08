@@ -4,32 +4,49 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'images',
-            title: 'Images',
-            type: 'array',
-            of: [
-                {
-                    type: 'image',
-                    fields: [
-                        {
-                            name: 'alt',
-                            title: 'Alt Text',
-                            type: 'string',
-                            description: 'Alternative text for the image'
-                        }
-                    ]
-                }
-            ]
+            name: 'title',
+            title: 'Title',
+            type: 'string',
+            validation: Rule => Rule.required()
         },
         {
-            name: 'websiteUrl',
-            title: 'Website URL',
-            type: 'url'
+            name: 'image',
+            title: 'Image',
+            type: 'image',
+            options: {
+                hotspot: true
+            },
+            validation: Rule => Rule.required()
         },
         {
-            name: 'order',
-            title: 'Order',
-            type: 'number'
-        }
-    ]
+            name: 'alt',
+            title: 'Alt Text',
+            type: 'string',
+            description: 'Alternative text for the image',
+            validation: Rule => Rule.required()
+        },
+        {
+            name: 'link',
+            title: 'Link',
+            type: 'url',
+            validation: Rule => Rule.uri({
+                allowRelative: true,
+                scheme: ['http', 'https', 'mailto', 'tel']
+            })
+        },
+        {
+            name: 'orderRank',
+            title: 'Order Rank',
+            type: 'string',
+            hidden: true, // This hides it from the regular document view
+        },
+    ],
+    orderings: [
+        {
+            title: 'Order by Rank',
+            name: 'orderRankAsc',
+            by: [{ field: 'orderRank', direction: 'asc' }],
+        },
+    ],
+
 }
