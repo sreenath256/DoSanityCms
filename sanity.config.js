@@ -4,6 +4,8 @@ import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemaTypes'
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list'
 import DoLogo from './asset/DoLogo'
+import { media } from 'sanity-plugin-media'
+
 
 export default defineConfig({
   name: 'default',
@@ -49,6 +51,7 @@ studio: {
           ]),
     }),
     visionTool(),
+    media(),
   ],
 
   schema: {
